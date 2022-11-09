@@ -20,19 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="hash模式定义：​	把前端路由的路径用#号拼接在真实url后面，当#后的前端路由发生改变时，浏览器不会重新发起请求，hash通过 window.onhashchange的方式 ，来监听hash变化，然后实现功能 特点： hash变化不会刷新页面 #号后面的路由变不会触发页面重新加载， hash值是保存在window.histroy中   hash变化会触发网页跳转，即浏览器的前进后退  hash">
+  <meta name="description" content="从现在开始学习">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vue-router中history和hash模式的区别">
-<meta property="og:url" content="http://example.com/vueRoueterMode/index.html">
+<meta property="og:title" content="小周的学习日记">
+<meta property="og:url" content="http://example.com/categories/%E5%89%8D%E7%AB%AF%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="小周的学习日记">
-<meta property="og:description" content="hash模式定义：​	把前端路由的路径用#号拼接在真实url后面，当#后的前端路由发生改变时，浏览器不会重新发起请求，hash通过 window.onhashchange的方式 ，来监听hash变化，然后实现功能 特点： hash变化不会刷新页面 #号后面的路由变不会触发页面重新加载， hash值是保存在window.histroy中   hash变化会触发网页跳转，即浏览器的前进后退  hash">
+<meta property="og:description" content="从现在开始学习">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-19T08:10:32.000Z">
-<meta property="article:modified_time" content="2022-10-20T03:19:17.097Z">
 <meta property="article:author" content="周彬">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/vueRoueterMode/">
+<link rel="canonical" href="http://example.com/categories/%E5%89%8D%E7%AB%AF%E6%95%B4%E7%90%86/">
 
 
 <script id="page-configurations">
@@ -45,8 +43,7 @@
   };
 </script>
 
-  <title>Vue-router中history和hash模式的区别 | 小周的学习日记
-</title>
+  <title>分类: 前端整理 | 小周的学习日记</title>
   
 
 
@@ -160,74 +157,54 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content category">
             
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <h2 class="collection-header">前端整理
+          <small>分类</small>
+        </h2>
+      </div>
 
-<h1 class="post-title" itemprop="name headline">Vue-router中history和hash模式的区别
-</h1>
+      
+    <div class="collection-year">
+      <span class="collection-header">2022</span>
+    </div>
 
-<div class="post-meta">
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2022-11-09T10:29:53+08:00"
+              content="2022-11-09">
+          11-09
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2022/11/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%98%93%E9%94%99%E7%82%B9%E6%95%B4%E7%90%86/" itemprop="url">
+            <span itemprop="name">前端开发易错点整理</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+    </div>
+  </div>
+  
+  
   
 
-</div>
+  
 
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <h2 id="hash模式"><a href="#hash模式" class="headerlink" title="hash模式"></a>hash模式</h2><h3 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h3><p>​	把前端路由的路径用#号拼接在真实url后面，当#后的前端路由发生改变时，浏览器不会重新发起请求，hash通过 window.onhashchange的方式 ，来监听hash变化，然后实现功能</p>
-<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><ul>
-<li><p><strong>hash变化不会刷新页面</strong></p>
-<p>#号后面的路由变不会触发页面重新加载， hash值是保存在window.histroy中 </p>
-</li>
-<li><p><strong>hash变化会触发网页跳转，即浏览器的前进后退</strong></p>
-</li>
-<li><p><strong>hash永远只在前端变换，不会提交到serve端</strong></p>
-</li>
-<li><p><strong>即使#后面跟的是一个不存在的路由，serve也不会返回404</strong></p>
-</li>
-<li><p><strong>会导致原来页面锚点功能不能使用</strong></p>
-</li>
-</ul>
-<h2 id="history模拟"><a href="#history模拟" class="headerlink" title="history模拟"></a>history模拟</h2><h3 id="定义：-1"><a href="#定义：-1" class="headerlink" title="定义："></a>定义：</h3><p>​	history API 是H5的新特性，允许开发者直接更改前端路由，即更新浏览器URL地址二不重新发起请求。</p>
-<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3><ul>
-<li><p><strong>路径中不包含“#”，看起来是真实url</strong></p>
-</li>
-<li><p><strong>刷新页面时，url会提交给serve端，所以得serve中匹配到这个路径，否则会返回404错误</strong></p>
-</li>
-<li><p><strong>在访问的路径上更改路由不会提交到serve端</strong></p>
-</li>
-<li><p><strong>使用的Api</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">window.history.pushState(state,title,url)</span><br><span class="line">//state：需要保存的数据，这个数据在触发popstate事件时，可以在event.state里获取</span><br><span class="line">//title：标题，基本没用，一般传null</span><br><span class="line">//url：设定新的历史纪录的url。新的url与当前url的origin必须是一样的，否则会抛出错误。url可以时绝对路径，也可以是相对路径。</span><br><span class="line">//如 当前url是 https://www.baidu.com/a/,执行history.pushState(null, null, &#x27;./qq/&#x27;)，则变成 https://www.baidu.com/a/qq/，</span><br><span class="line">//执行history.pushState(null, null, &#x27;/qq/&#x27;)，则变成 https://www.baidu.com/qq/</span><br><span class="line"></span><br><span class="line">window.history.replaceState(state,title,url)</span><br><span class="line">//与pushState 基本相同，但她是修改当前历史纪录，而 pushState 是创建新的历史纪录</span><br><span class="line"></span><br><span class="line">window.addEventListener(&quot;pospstate&quot;,function()&#123;</span><br><span class="line"> //监听浏览器前进后退事件，pushState与replaceState方法不会触发</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">window.history.state //添加任意类型的数据到记录中</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.history.back()//后退</span><br><span class="line">window.history.forward()//前进</span><br><span class="line">window.history.go(1)//前进一部，-2回退两不，window.history.lengthk可以查看当前历史堆栈中页面的数量</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="注意项："><a href="#注意项：" class="headerlink" title="注意项："></a>注意项：</h3><ul>
-<li><p><strong>nginx部署时，history模式下路由报错</strong> 把vue.config.js里面的publicPath 改成”&#x2F;“  publicPath: “&#x2F;“,</p>
-</li>
-<li><p><strong>nginx部署后，刷新报错</strong> 需要把public目录下index.html静态文件引入改成绝对路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改前：&lt;script src=&quot;./js/config/environment.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">修改后：&lt;script src=&quot;/js/config/environment.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -278,7 +255,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hash%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">hash模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">特点：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#history%E6%A8%A1%E6%8B%9F"><span class="nav-number">2.</span> <span class="nav-text">history模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E7%82%B9%EF%BC%9A-1"><span class="nav-number">2.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E9%A1%B9%EF%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">注意项：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
