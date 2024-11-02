@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="git 命令学习本地库操作 生成本地分支   git checkout -b 分支名     123git checkout -b b2&#x2F;&#x2F; Switched to a new branch &amp;#x27;b2&amp;#x27;     git switch -u 分支名     123git switch -u b3&#x2F;&#x2F; Switched to a new branch &amp;#x27;b3&amp;#x27;">
+  <meta name="description" content="git 命令学习本地库操作分支&#x2F;提交 生成本地分支   git checkout -b 分支名     123git checkout -b b2&#x2F;&#x2F; Switched to a new branch &amp;#x27;b2&amp;#x27;     git switch -c 分支名     123git switch -c b3&#x2F;&#x2F; Switched to a new branch &amp;#x27;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="git命令学习">
 <meta property="og:url" content="http://example.com/gitStudy/index.html">
 <meta property="og:site_name" content="小周的学习日记">
-<meta property="og:description" content="git 命令学习本地库操作 生成本地分支   git checkout -b 分支名     123git checkout -b b2&#x2F;&#x2F; Switched to a new branch &amp;#x27;b2&amp;#x27;     git switch -u 分支名     123git switch -u b3&#x2F;&#x2F; Switched to a new branch &amp;#x27;b3&amp;#x27;">
+<meta property="og:description" content="git 命令学习本地库操作分支&#x2F;提交 生成本地分支   git checkout -b 分支名     123git checkout -b b2&#x2F;&#x2F; Switched to a new branch &amp;#x27;b2&amp;#x27;     git switch -c 分支名     123git switch -c b3&#x2F;&#x2F; Switched to a new branch &amp;#x27;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/gitStudy/index/checkoutCreate.png">
 <meta property="og:image" content="http://example.com/gitStudy/index/switch.png">
@@ -37,8 +37,15 @@
 <meta property="og:image" content="http://example.com/gitStudy/index/commit.png">
 <meta property="og:image" content="http://example.com/gitStudy/index/merge.png">
 <meta property="og:image" content="http://example.com/gitStudy/index/rebase.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/checkoutFile.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/restore.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/restoreStaged.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/stashSave.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/stashApply0.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/stashDrop.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/stashClear.png">
 <meta property="article:published_time" content="2024-10-30T13:17:11.000Z">
-<meta property="article:modified_time" content="2024-10-30T13:22:56.319Z">
+<meta property="article:modified_time" content="2024-11-02T07:35:57.320Z">
 <meta property="article:author" content="周彬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/gitStudy/index/checkoutCreate.png">
@@ -197,7 +204,7 @@
       
       
       <div class="post-body">
-          <h2 id="git-命令学习"><a href="#git-命令学习" class="headerlink" title="git 命令学习"></a>git 命令学习</h2><h3 id="本地库操作"><a href="#本地库操作" class="headerlink" title="本地库操作"></a>本地库操作</h3><ol>
+          <h2 id="git-命令学习"><a href="#git-命令学习" class="headerlink" title="git 命令学习"></a>git 命令学习</h2><h3 id="本地库操作"><a href="#本地库操作" class="headerlink" title="本地库操作"></a>本地库操作</h3><h4 id="分支-x2F-提交"><a href="#分支-x2F-提交" class="headerlink" title="分支&#x2F;提交"></a>分支&#x2F;提交</h4><ol>
 <li>生成本地分支</li>
 </ol>
 <ul>
@@ -205,8 +212,8 @@
   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b b2</span><br><span class="line"></span><br><span class="line">// Switched to a new branch &#x27;b2&#x27;</span><br></pre></td></tr></table></figure>
 <p>  <img src="/gitStudy/index/checkoutCreate.png"></p>
 </li>
-<li><p>git switch -u 分支名  </p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git switch -u b3</span><br><span class="line"></span><br><span class="line">// Switched to a new branch &#x27;b3&#x27;</span><br></pre></td></tr></table></figure>
+<li><p>git switch -c 分支名  </p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git switch -c b3</span><br><span class="line"></span><br><span class="line">// Switched to a new branch &#x27;b3&#x27;</span><br></pre></td></tr></table></figure>
 <p>  <img src="/gitStudy/index/switch.png"></p>
 </li>
 </ul>
@@ -245,13 +252,13 @@
 <p><img src="/gitStudy/index/diff.png"></p>
 </li>
 </ul>
-<ol start="4">
+<ol start="5">
 <li>暂存修改</li>
 </ol>
 <ul>
 <li>git add 文件名，git add . 为暂存所有修改（一般直接使用git add .）</li>
 </ul>
-<ol start="5">
+<ol start="6">
 <li>提交</li>
 </ol>
 <ul>
@@ -259,8 +266,8 @@
 <p> <img src="/gitStudy/index/commit.png"></p>
 </li>
 </ul>
-<ol start="6">
-<li>合并代码</li>
+<ol start="7">
+<li>合并分支</li>
 </ol>
 <ul>
 <li><p>git merge 上述commit操作是在b3分支执行，现在在b1分支同步b3修改，是的b1也包含b3修改；先切换b1分支，再执行git merge</p>
@@ -268,12 +275,72 @@
 <p> <img src="/gitStudy/index/merge.png"></p>
 </li>
 </ul>
-<ol start="7">
+<ol start="8">
 <li>变基</li>
 </ol>
 <ul>
 <li><p>git rebase 基点分支名，rebase操作会先提取共同改的parents,然后将待变基分支最新提交复制嫁接到基点分支最新提交之后</p>
 <p> <img src="/gitStudy/index/rebase.png"></p>
+</li>
+</ul>
+<ol start="9">
+<li>撤销提交</li>
+</ol>
+<ul>
+<li><p>git revert [提交hash值] 直接撤销一个提交，并且会新增一条提交来记录撤销操作，便于团队协作。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">git revert 5e3bb9f9eb8581fe36cb452d5787dd0c4fec83e6</span><br><span class="line"></span><br><span class="line">// [b3 70de1cb] Revert &quot;55&quot;</span><br><span class="line">// 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br><span class="line">git log</span><br><span class="line"></span><br><span class="line">//commit 70de1cb161ce146c9654717ff08330245a7b33ab (HEAD -&gt; b3)</span><br><span class="line">//Author: zhoubin4610 &lt;780425900@qq.com&gt;</span><br><span class="line">//Date:   Sat Nov 2 10:44:04 2024 +0800</span><br><span class="line"></span><br><span class="line">//    Revert &quot;55&quot;</span><br><span class="line"></span><br><span class="line">//    This reverts commit 5e3bb9f9eb8581fe36cb452d5787dd0c4fec83e6.</span><br><span class="line"></span><br><span class="line">//commit 5e3bb9f9eb8581fe36cb452d5787dd0c4fec83e6</span><br><span class="line">//Author: zhoubin4610 &lt;780425900@qq.com&gt;</span><br><span class="line">//Date:   Wed Oct 30 16:13:03 2024 +0800</span><br><span class="line"></span><br><span class="line">//    55</span><br><span class="line"></span><br><span class="line">//commit 5c02cd96dc54c3a74a1d2e2a3014f81334e4b889 (b2, b1)</span><br><span class="line">//Author: zhoubin4610 &lt;780425900@qq.com&gt;</span><br><span class="line">//Date:   Wed Oct 30 15:11:16 2024 +0800</span><br><span class="line"></span><br><span class="line">//    fix:修改11.txt</span><br><span class="line"></span><br><span class="line">//commit 39fde2403341fe2191f3160e48df4f0771996c4a</span><br><span class="line">//Author: zhoubin4610 &lt;780425900@qq.com&gt;</span><br><span class="line">//Date:   Wed Oct 30 14:44:19 2024 +0800</span><br><span class="line"></span><br><span class="line">//    初始文件</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git revert –no-edit [提交hash值] 不会打开vim编辑器要求编辑的命令(直接进行撤销和提交)</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git revert --no-edit 108d0b4e1bc1947c11d2f8d3c3635324d84aa8c8</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// [b3 8e3c4c3] Revert &quot;66&quot;</span><br><span class="line">//Date: Sat Nov 2 11:03:42 2024 +0800</span><br><span class="line">//1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git revert –no-commit [提交hash值] 此时会撤销提交，但是不会进行commit操作，此时撤销的修改会是暂存的状态，可以撤销多条提交，最后手动进行提交。</p>
+</li>
+</ul>
+<h4 id="修改文件管理（放弃-存储）"><a href="#修改文件管理（放弃-存储）" class="headerlink" title="修改文件管理（放弃,存储）"></a>修改文件管理（放弃,存储）</h4><ol>
+<li>放弃当前管理中的修改</li>
+</ol>
+<ul>
+<li>未被add的修改可以通过 <ul>
+<li><p>git checkout [文件路径]</p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout  1.txt</span><br><span class="line"></span><br><span class="line">//Updated 1 path from the index</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  <img src="/gitStudy/index/checkoutFile.png"></p>
+</li>
+<li><p>git restore [文件路径] </p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git restore 1.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>  <img src="/gitStudy/index/restore.png"></p>
+</li>
+</ul>
+</li>
+<li>已被add的修改<ul>
+<li><p>git restore –staged [文件路径] 注意此时这条操作只会把暂存中的文件取出来，将文件状态变更为未暂存的状态。此时修改依然存在，如果需要彻底撤销还需执行一次git restore [文件路径]</p>
+<p>  <img src="/gitStudy/index/restoreStaged.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>存储变更</li>
+</ol>
+<ul>
+<li><p>git stash save ‘[存储注释]’  用于不想暂存文件,但是想保留进行的修改。一般在切分支保留上一个分支修改，以便回头继续进行修改。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash save &#x27;m1&#x27;</span><br><span class="line">//Saved working directory and index state On b3: m1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/stashSave.png">  </p>
+</li>
+<li><p>git stash list  查看存储列表</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br><span class="line"></span><br><span class="line">//stash@&#123;0&#125;: On b3: m1</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git stash show  查看第一个(最近的)存储起来的更改。如果想要查看指定stash变更,就在后面stash@{[num]},num为stash list显示的序号(注意如果不在gitBash窗口下小括号要转义)。如果后面再跟 -p 就可以显示具体的修改。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">git stash show </span><br><span class="line"></span><br><span class="line">//1.txt | 2 +-</span><br><span class="line">//1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br><span class="line">git stash show stash@&#123;0&#125;</span><br><span class="line"></span><br><span class="line">// 1.txt | 2 +-</span><br><span class="line">// 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git stash show stash@&#123;0&#125; -p</span><br><span class="line"></span><br><span class="line">//diff --git a/1.txt b/1.txt</span><br><span class="line">//index e343011..9b54864 100644</span><br><span class="line">//--- a/1.txt</span><br><span class="line">//+++ b/1.txt</span><br><span class="line">//@@ -1 +1 @@</span><br><span class="line">//-222666</span><br><span class="line">//\ No newline at end of file</span><br><span class="line">//+22266678</span><br><span class="line">//\ No newline at end of file</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git stash pop 弹出第一个(最近的)存储并删除,如果要弹出指定存储在后面更 stash@{[num]} num为stash list显示的序号</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git stash pop stash@&#123;0&#125;</span><br><span class="line"></span><br><span class="line">//On branch b3</span><br><span class="line">//Changes not staged for commit:</span><br><span class="line">//(use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">//(use &quot;git restore &lt;file&gt;...&quot; to discard changes in working    directory)</span><br><span class="line">//modified:   1.txt</span><br><span class="line"></span><br><span class="line">//no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br><span class="line">//Dropped stash@&#123;0&#125; (0563301d4a93dd02b82e54ef7c6fe1083deb2c33)</span><br></pre></td></tr></table></figure></li>
+<li><p>git stash apply 应用第一个(最近的)存储但是不删除stash list 中的记录</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">git stash apply</span><br><span class="line"></span><br><span class="line">//On branch b3</span><br><span class="line">//Changes not staged for commit:</span><br><span class="line">//(use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">//(use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">//        modified:   1.txt</span><br><span class="line"></span><br><span class="line">git stash apply stash@&#123;0&#125;</span><br><span class="line"></span><br><span class="line">On branch b3</span><br><span class="line">//Changes not staged for commit:</span><br><span class="line">//(use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">//(use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">//        modified:   1.txt</span><br><span class="line"></span><br><span class="line">//no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/stashApply0.png"></p>
+</li>
+<li><p>git stash drop stash@{[num]} 删除指定存储</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash drop stash@&#123;0&#125;</span><br><span class="line"></span><br><span class="line">//Dropped stash@&#123;0&#125; (f634e15e0f6842f1c6921b38030dc2e345f19c0b)</span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/stashDrop.png"></p>
+</li>
+<li><p>git stash clear 一次性清除存储列表中所有存储记录。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/stashClear.png"></p>
 </li>
 </ul>
 
@@ -337,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">git 命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">本地库操作</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">git 命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">本地库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF-x2F-%E6%8F%90%E4%BA%A4"><span class="nav-number">1.1.1.</span> <span class="nav-text">分支&#x2F;提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%EF%BC%88%E6%94%BE%E5%BC%83-%E5%AD%98%E5%82%A8%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">修改文件管理（放弃,存储）</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
