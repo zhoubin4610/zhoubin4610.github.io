@@ -44,8 +44,21 @@
 <meta property="og:image" content="http://example.com/gitStudy/index/stashApply0.png">
 <meta property="og:image" content="http://example.com/gitStudy/index/stashDrop.png">
 <meta property="og:image" content="http://example.com/gitStudy/index/stashClear.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tag.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tag1.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagShow.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/checkoutTag.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagEdit.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagPush.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagPush1.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagPush2.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagPush3.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagDel.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagDel1.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagDel2.png">
+<meta property="og:image" content="http://example.com/gitStudy/index/tagDel3.png">
 <meta property="article:published_time" content="2024-10-30T13:17:11.000Z">
-<meta property="article:modified_time" content="2024-11-02T07:35:57.320Z">
+<meta property="article:modified_time" content="2024-11-08T08:11:17.993Z">
 <meta property="article:author" content="周彬">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/gitStudy/index/checkoutCreate.png">
@@ -343,6 +356,74 @@
 <p> <img src="/gitStudy/index/stashClear.png"></p>
 </li>
 </ul>
+<h3 id="远程"><a href="#远程" class="headerlink" title="远程"></a>远程</h3><h4 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h4><ul>
+<li><p>git remote -v 查看远程库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line">//origin  https://gitee.com/zhou-bin4610/git-study.git (fetch)</span><br><span class="line">//origin  https://gitee.com/zhou-bin4610/git-study.git (push)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git fetch origin 远程分支名 将远程分支更新到本地的远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin b3</span><br><span class="line"></span><br><span class="line">// From https://gitee.com/zhou-bin4610/git-study</span><br><span class="line">// * branch            b3         -&gt; FETCH_HEAD</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git pull 拉取所有本地分支关联的远程分析并且当前HEAD合并拉取后的本地远程分支，推荐使用指定远程分支，git pull origin [远程分支名]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin b3</span><br><span class="line">// From https://gitee.com/zhou-bin4610/git-study</span><br><span class="line">// * branch            b3         -&gt; FETCH_HEAD</span><br><span class="line">// Already up to date.</span><br></pre></td></tr></table></figure></li>
+<li><p>进阶使用 如果不想拉取后有合并的记录，可以使用–rebase 指令，将本地分支的不同commit 变基到远程分支下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> git pull --rebase origin b3</span><br><span class="line"> </span><br><span class="line">// From https://gitee.com/zhou-bin4610/git-study</span><br><span class="line">// * branch            b3         -&gt; FETCH_HEAD</span><br><span class="line">// Updating 5c02cd9..55211a3</span><br><span class="line">// Fast-forward</span><br><span class="line">// 1.txt | 2 +-</span><br><span class="line">// 1 file changed, 1 insertion(+), 1 deletion(-)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h4><ul>
+<li><p>git push 将当前分支推送到绑定的远程分支，可以通过git branch -vv 查看本地分支绑定的远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">git branch -vv</span><br><span class="line">// b1 55211a3 Revert &quot;77&quot;</span><br><span class="line">// * b2 55211a3 Revert &quot;77&quot;</span><br><span class="line">// b3 55211a3 [origin/b3] Revert &quot;77&quot;</span><br><span class="line"></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">// Enumerating objects: 5, done.</span><br><span class="line">// Counting objects: 100% (5/5), done.</span><br><span class="line">// Writing objects: 100% (3/3), 253 bytes | 253.00 KiB/s, done.</span><br><span class="line">// Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">// remote: Powered by GITEE.COM [1.1.5]</span><br><span class="line">// remote: Set trace flag bc4b8fbb</span><br><span class="line">// To https://gitee.com/zhou-bin4610/git-study.git</span><br><span class="line">// 55211a3..1c94dda  b3 -&gt; b3</span><br><span class="line">   </span><br></pre></td></tr></table></figure></li>
+<li><p>git push origin [本地分支]:[远程分支],将本地指定分支推送到远程库指定分支</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git push origin b2:b3</span><br><span class="line"></span><br><span class="line">// Enumerating objects: 5, done.</span><br><span class="line">// Counting objects: 100% (5/5), done.</span><br><span class="line">// Writing objects: 100% (3/3), 303 bytes | 303.00 KiB/s, done.</span><br><span class="line">// Total 3 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">// remote: Powered by GITEE.COM [1.1.5]</span><br><span class="line">// remote: Set trace flag 0d4740ad</span><br><span class="line">// To https://gitee.com/zhou-bin4610/git-study.git</span><br><span class="line">//  1c94dda..70fa21a  b2 -&gt; b3</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><h5 id="本地tag操作"><a href="#本地tag操作" class="headerlink" title="本地tag操作"></a>本地tag操作</h5><ul>
+<li><p>git tag 查看当前分支下的所有标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git tag </span><br><span class="line"></span><br><span class="line">// v1</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>git tag [标签名] 将当前head打上标签，一般用来标记开发的重要节点，比如v1,v2大版本，可以用于紧急情况的版本回退</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v1</span><br><span class="line">      </span><br></pre></td></tr></table></figure>
+<p><img src="/gitStudy/index/tag.png"></p>
+</li>
+<li><p>git tag -a [标签名] -m [注释名]   添加一条附带注释的标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v2 -m &quot;这是一条注释的tag&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/gitStudy/index/tag1.png"></p>
+</li>
+<li><p>git show  [tag名称]   查看指定tag的变更</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git show  v1 </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagShow.png"></p>
+</li>
+<li><p>git checkout [tag名称] 切换到指定tag对应的commit</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout  v1</span><br><span class="line"></span><br><span class="line">      </span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/checkoutTag.png"></p>
+</li>
+<li><p>git tag -f [tag名称] [新的提交hash&#x2F;新的分支名] 将已有的标签进行移动，移动到新的提交或者新的分支的末尾</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git tag -f v2 108d0b4</span><br><span class="line"></span><br><span class="line">//Updated tag &#x27;v2&#x27; (was 8b8fb50)</span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagEdit.png"></p>
+</li>
+</ul>
+<h5 id="推送tag"><a href="#推送tag" class="headerlink" title="推送tag"></a>推送tag</h5><ul>
+<li><p>git push origin [tag名称] 推送单个tag到远程库</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git push origin v1</span><br><span class="line"></span><br><span class="line">// Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">// remote: Powered by GITEE.COM [1.1.5]</span><br><span class="line">// remote: Set trace flag 80467594</span><br><span class="line">// To https://gitee.com/zhou-bin4610/git-study.git</span><br><span class="line">// * [new tag]         v1 -&gt; v1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagPush.png"><br> <img src="/gitStudy/index/tagPush1.png"></p>
+</li>
+<li><p>git push –tags  推送所有tag到远程库</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git push --tags</span><br><span class="line"></span><br><span class="line">// Total 0 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">// remote: Powered by GITEE.COM [1.1.5]</span><br><span class="line">// remote: Set trace flag a54f468f</span><br><span class="line">// To https://gitee.com/zhou-bin4610/git-study.git</span><br><span class="line">// * [new tag]         v2 -&gt; v2</span><br><span class="line">// * [new tag]         v3 -&gt; v3</span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagPush2.png"><br> <img src="/gitStudy/index/tagPush3.png"></p>
+</li>
+<li><p>删除 tag</p>
+<ul>
+<li><p>删除本地 tag，使用 git tag -d</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> git tag -d v3</span><br><span class="line"></span><br><span class="line">//Deleted tag &#x27;v3&#x27; (was 6b0834c)</span><br><span class="line"></span><br><span class="line">git tag</span><br><span class="line"></span><br><span class="line">//   v1</span><br><span class="line">//   v2</span><br></pre></td></tr></table></figure></li>
+<li><p>删除远程 tag </p>
+<ul>
+<li><p>使用 git push –delete origin [tag名称] （需要先删除本地对应tag）</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --delete origin v3</span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagDel.png"><br> <img src="/gitStudy/index/tagDel1.png"></p>
+</li>
+<li><p>跟删除远程分支一样，使用 git push origin :[tag名称]</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push origin :v2</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+<p> <img src="/gitStudy/index/tagDel2.png"><br> <img src="/gitStudy/index/tagDel3.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
       </div>
       
@@ -404,7 +485,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">git 命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">本地库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF-x2F-%E6%8F%90%E4%BA%A4"><span class="nav-number">1.1.1.</span> <span class="nav-text">分支&#x2F;提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%EF%BC%88%E6%94%BE%E5%BC%83-%E5%AD%98%E5%82%A8%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">修改文件管理（放弃,存储）</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%91%BD%E4%BB%A4%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">git 命令学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">1.1.</span> <span class="nav-text">本地库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E6%94%AF-x2F-%E6%8F%90%E4%BA%A4"><span class="nav-number">1.1.1.</span> <span class="nav-text">分支&#x2F;提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%EF%BC%88%E6%94%BE%E5%BC%83-%E5%AD%98%E5%82%A8%EF%BC%89"><span class="nav-number">1.1.2.</span> <span class="nav-text">修改文件管理（放弃,存储）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">远程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8B%89%E5%8F%96"><span class="nav-number">1.2.1.</span> <span class="nav-text">拉取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A8%E9%80%81"><span class="nav-number">1.2.2.</span> <span class="nav-text">推送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">1.2.3.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0tag%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">本地tag操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A8%E9%80%81tag"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">推送tag</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
